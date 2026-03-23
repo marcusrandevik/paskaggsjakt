@@ -27,15 +27,15 @@ const CLUES: Clue[] = [
   },
   {
     id: 3,
-    title: "Hollow Hill",
+    title: "Berget vid havet",
     image: "maps/map3.jpeg",
     alt: "Ancient map scroll of Hollow Hill",
     correctLetter: "C"
   },
   {
     id: 4,
-    title: "Amber Archway",
-    image: "maps/map4.jpg",
+    title: "Ängen och bergt",
+    image: "maps/map4.jpeg",
     alt: "Aerial forest map of Amber Archway",
     correctLetter: "D"
   },
@@ -111,7 +111,7 @@ export default function App() {
             transition={{ delay: 0.1 }}
             className="text-on-surface-variant max-w-2xl text-lg leading-relaxed"
           >
-            Lös ledtrådarna för att hitta bokstäverna som gömmer sig i kartorna. När du har alla bokstäver kan du försöka lista ut det slutgiltiga ordet och vinna påskägget!
+            Lista ut var gömställerna är och ge er ut för att hitta påskäggen. Vid varje påskägg finns en bokstav och när du har alla bokstäver kan du försöka lista ut det slutgiltiga ordet!
           </motion.p>
         </header>
 
