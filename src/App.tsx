@@ -13,14 +13,14 @@ interface Clue {
 const CLUES: Clue[] = [
   {
     id: 1,
-    title: "Whispering Pines",
+    title: "Sjörövarnas hamn",
     image: "maps/map1.jpeg",
     alt: "Vintage hand-drawn map of Whispering Pines",
     correctLetter: "A"
   },
   {
     id: 2,
-    title: "The Sunken Grotto",
+    title: "Det stora fältet",
     image: "maps/map2.jpg",
     alt: "Weathered nautical map of The Sunken Grotto",
     correctLetter: "B"
@@ -28,7 +28,7 @@ const CLUES: Clue[] = [
   {
     id: 3,
     title: "Hollow Hill",
-    image: "maps/map3.jpg",
+    image: "maps/map3.jpeg",
     alt: "Ancient map scroll of Hollow Hill",
     correctLetter: "C"
   },
@@ -76,7 +76,7 @@ export default function App() {
   const handleValidate = (clue: Clue) => {
     const currentLetter = letters[clue.id] || '';
     if (!currentLetter) return;
-    
+
     const isCorrect = currentLetter === clue.correctLetter;
     setValidationStatuses(prev => ({ ...prev, [clue.id]: isCorrect ? 'success' : 'error' }));
   };
@@ -103,7 +103,7 @@ export default function App() {
             animate={{ opacity: 1, y: 0 }}
             className="font-headline text-5xl md:text-6xl font-extrabold text-on-surface tracking-tight mb-4"
           >
-            The Cartographer's Journey
+            Åsas påskäggsjakt
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -111,7 +111,7 @@ export default function App() {
             transition={{ delay: 0.1 }}
             className="text-on-surface-variant max-w-2xl text-lg leading-relaxed"
           >
-            Unfold the hidden secrets of the valley. Each map fragment holds a single character. Piece them together to claim the golden egg.
+            Lös ledtrådarna för att hitta bokstäverna som gömmer sig i kartorna. När du har alla bokstäver kan du försöka lista ut det slutgiltiga ordet och vinna påskägget!
           </motion.p>
         </header>
 
@@ -143,7 +143,7 @@ export default function App() {
                 </div>
                 <div className="flex items-center gap-4">
                   <label className="font-label text-sm font-bold text-tertiary uppercase tracking-wider">
-                    Discovery Letter
+                    Bokstav
                   </label>
                   <div className="flex bg-surface-container-highest rounded-lg overflow-hidden focus-within:ring-2 focus-within:ring-primary/40 transition-shadow">
                     <input
@@ -152,18 +152,17 @@ export default function App() {
                       placeholder="?"
                       value={letters[clue.id] || ''}
                       onChange={(e) => handleLetterChange(clue.id, e.target.value)}
-                      className={`w-14 h-14 text-center text-2xl font-bold bg-transparent border-none focus:ring-0 placeholder-on-surface-variant/30 transition-colors ${
-                        validationStatuses[clue.id] === 'success' ? 'text-green-500' :
+                      className={`w-14 h-14 text-center text-2xl font-bold bg-transparent border-none focus:ring-0 placeholder-on-surface-variant/30 transition-colors ${validationStatuses[clue.id] === 'success' ? 'text-green-500' :
                         validationStatuses[clue.id] === 'error' ? 'text-red-500' :
-                        'text-primary'
-                      }`}
+                          'text-primary'
+                        }`}
                     />
                     <button
                       onClick={() => handleValidate(clue)}
                       disabled={!letters[clue.id]}
                       className="px-4 bg-primary/10 hover:bg-primary/20 text-primary transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-medium font-label uppercase tracking-wider text-sm flex items-center justify-center border-l border-surface/20"
                     >
-                      Verify
+                      Kontrollera
                     </button>
                   </div>
                 </div>
@@ -190,13 +189,8 @@ export default function App() {
           <div className="flex flex-col gap-2">
             <span className="text-lg font-bold text-on-surface font-headline">Påskäggsjakt</span>
             <p className="font-body text-sm text-tertiary">
-              © 2024 Påskäggsjakt - The Cartographer's Journey
+              © 2026 Marcus Randevik
             </p>
-          </div>
-          <div className="flex gap-8">
-            <a href="#" className="font-body text-sm text-on-surface-variant hover:text-secondary transition-colors">Privacy Policy</a>
-            <a href="#" className="font-body text-sm text-on-surface-variant hover:text-secondary transition-colors">Hunt Rules</a>
-            <a href="#" className="font-body text-sm text-on-surface-variant hover:text-secondary transition-colors">Support</a>
           </div>
         </div>
       </footer>
@@ -255,7 +249,7 @@ export default function App() {
               className="w-full max-w-lg bg-surface-container-low rounded-3xl p-8 shadow-2xl flex flex-col gap-8 text-center border border-surface-container-highest"
             >
               <h2 className="font-headline text-4xl font-extrabold text-on-surface">The Final Enigma</h2>
-              
+
               <div className="flex justify-center gap-4 flex-wrap">
                 {CLUES.map(clue => {
                   const isGuessed = validationStatuses[clue.id] === 'success';
@@ -274,13 +268,12 @@ export default function App() {
                   placeholder="Enter the final word..."
                   value={finalGuess}
                   onChange={(e) => handleFinalGuessChange(e.target.value)}
-                  className={`w-full px-6 py-4 text-center text-2xl font-bold bg-surface rounded-xl border focus:outline-none focus:ring-2 transition-colors uppercase ${
-                    finalValidationStatus === 'success' ? 'border-green-500 text-green-500 focus:ring-green-500/50' :
+                  className={`w-full px-6 py-4 text-center text-2xl font-bold bg-surface rounded-xl border focus:outline-none focus:ring-2 transition-colors uppercase ${finalValidationStatus === 'success' ? 'border-green-500 text-green-500 focus:ring-green-500/50' :
                     finalValidationStatus === 'error' ? 'border-red-500 text-red-500 focus:ring-red-500/50' :
-                    'border-surface-container-highest text-on-surface focus:ring-primary/50 placeholder-on-surface-variant/30'
-                  }`}
+                      'border-surface-container-highest text-on-surface focus:ring-primary/50 placeholder-on-surface-variant/30'
+                    }`}
                 />
-                <button 
+                <button
                   onClick={handleFinalValidate}
                   disabled={!finalGuess || finalValidationStatus === 'success'}
                   className="w-full py-4 bg-primary text-on-primary rounded-xl font-headline font-bold text-lg uppercase tracking-wide hover:shadow-lg hover:shadow-primary/20 transition-all active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
@@ -289,7 +282,7 @@ export default function App() {
                 </button>
 
                 {finalValidationStatus === 'success' && (
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     className="mt-4 p-4 bg-green-500/10 text-green-500 rounded-xl font-bold font-headline"
@@ -298,7 +291,7 @@ export default function App() {
                   </motion.div>
                 )}
                 {finalValidationStatus === 'error' && (
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     className="mt-4 p-4 bg-red-500/10 text-red-500 rounded-xl font-bold font-headline"
