@@ -6,7 +6,7 @@ export const CLUES: Clue[] = [
     title: "Sjörövarnas hamn",
     image: "maps/map1.jpeg",
     alt: "Vintage hand-drawn map of Whispering Pines",
-    correctLetter: "A",
+    correctLetter: "K",
     hint: "En hamn med utsikt över vita sand"
   },
   {
@@ -14,7 +14,7 @@ export const CLUES: Clue[] = [
     title: "Det stora fältet",
     image: "maps/map2.jpg",
     alt: "Weathered nautical map of The Sunken Grotto",
-    correctLetter: "B",
+    correctLetter: "P",
     hint: "Här finns många stigar för den som är ute och går"
   },
   {
@@ -22,7 +22,7 @@ export const CLUES: Clue[] = [
     title: "Berget vid havet",
     image: "maps/map3.jpeg",
     alt: "Ancient map scroll of Hollow Hill",
-    correctLetter: "C",
+    correctLetter: "A",
     hint: "Utsikten från detta berg är svårslagen"
   },
   {
@@ -30,7 +30,7 @@ export const CLUES: Clue[] = [
     title: "Ängen och berget",
     image: "maps/map4.jpeg",
     alt: "Aerial forest map of Amber Archway",
-    correctLetter: "D",
+    correctLetter: "Å",
     hint: "På ängen i närheten är det på sommaren fullt av barn som rest hit."
   },
   {
@@ -40,7 +40,29 @@ export const CLUES: Clue[] = [
     alt: "Skogen med spelplanen",
     correctLetter: "E",
     hint: "Här finns många stigar för den som är ute och går"
+  }, {
+    id: 6,
+    title: "Ängen vid skolan",
+    image: "maps/map6.jpg",
+    alt: "Ängen vid skolan",
+    correctLetter: "R",
+    hint: "En stor yta där många rör sig."
+  }, {
+    id: 7,
+    title: "Berget vid den stora stranden",
+    image: "maps/map7.jpg",
+    alt: "Berget vid den stora stranden",
+    correctLetter: "S",
+    hint: "En stor yta där många rör sig."
+  },
+  {
+    id: 8,
+    title: "Berget vid dammen",
+    image: "maps/map8.jpg",
+    alt: "Berget vid dammen",
+    correctLetter: "H",
+    hint: "Ett berg med utsikt över både damm och hav"
   }
 ];
 
-export const CORRECT_FINAL_WORD = "ABCDE";
+export const CORRECT_FINAL_WORD = "PÅSKHARE";
