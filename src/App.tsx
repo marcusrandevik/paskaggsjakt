@@ -311,21 +311,7 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      {/* Mobile Bottom Nav */}
-      <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-end px-4 pb-4 bg-surface/80 backdrop-blur-md rounded-t-[3rem] border-t border-surface-container-highest shadow-[0_-4px_24px_rgba(54,46,28,0.06)]">
-        <a className="flex flex-col items-center justify-center bg-primary text-white rounded-full p-3 mb-2 transform -translate-y-2 shadow-lg" href="#">
-          <Compass className="w-6 h-6" />
-          <span className="font-body text-[10px] font-medium">Map</span>
-        </a>
-        <a className="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary" href="#">
-          <BookOpen className="w-6 h-6" />
-          <span className="font-body text-[10px] font-medium">Journal</span>
-        </a>
-        <a className="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary" href="#">
-          <Lightbulb className="w-6 h-6" />
-          <span className="font-body text-[10px] font-medium">Clues</span>
-        </a>
-      </nav>
+
     </div>
   );
 }
