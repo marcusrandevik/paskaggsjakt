@@ -8,6 +8,7 @@ interface Clue {
   image: string;
   alt: string;
   correctLetter: string;
+  hint: string;
 }
 
 const CLUES: Clue[] = [
@@ -16,35 +17,40 @@ const CLUES: Clue[] = [
     title: "Sjörövarnas hamn",
     image: "maps/map1.jpeg",
     alt: "Vintage hand-drawn map of Whispering Pines",
-    correctLetter: "A"
+    correctLetter: "A",
+    hint: "En hamn med utsikt över vita sand"
   },
   {
     id: 2,
     title: "Det stora fältet",
     image: "maps/map2.jpg",
     alt: "Weathered nautical map of The Sunken Grotto",
-    correctLetter: "B"
+    correctLetter: "B",
+    hint: "Här finns många stigar för den som är ute och går"
   },
   {
     id: 3,
     title: "Berget vid havet",
     image: "maps/map3.jpeg",
     alt: "Ancient map scroll of Hollow Hill",
-    correctLetter: "C"
+    correctLetter: "C",
+    hint: "Utsikten från detta berg är svårslagen"
   },
   {
     id: 4,
     title: "Ängen och bergt",
     image: "maps/map4.jpeg",
     alt: "Aerial forest map of Amber Archway",
-    correctLetter: "D"
+    correctLetter: "D",
+    hint: "På ängen i närheten är det på sommaren fullt av barn som rest hit."
   },
   {
     id: 5,
     title: "The Rusty Gate",
     image: "maps/map5.jpg",
     alt: "Coffee-stained map of The Rusty Gate",
-    correctLetter: "E"
+    correctLetter: "E",
+    hint: "Studera kartan noggrant..."
   }
 ];
 
@@ -221,7 +227,7 @@ export default function App() {
             />
             <div className="mt-8 text-surface text-center">
               <h2 className="font-headline text-3xl font-bold mb-2">Map Detail: {selectedClue.title}</h2>
-              <p className="font-label opacity-70 text-lg">Study the contours carefully...</p>
+              <p className="font-label opacity-70 text-lg">{selectedClue.hint}</p>
             </div>
           </motion.div>
         )}
