@@ -37,7 +37,7 @@ export const ClueCard: React.FC<ClueCardProps> = ({
           onClick={() => onImageClick(clue)}
         />
         <div className="absolute top-4 right-4 bg-primary text-on-primary px-3 py-1 rounded-full text-xs font-bold font-label">
-          CLUE #{clue.id}
+          Ägg #{clue.id}
         </div>
       </div>
       <div className="p-8 flex flex-col gap-6">
@@ -56,11 +56,10 @@ export const ClueCard: React.FC<ClueCardProps> = ({
               value={letter}
               onChange={(e) => onLetterChange(clue.id, e.target.value)}
               readOnly={validationStatus === 'success'}
-              className={`w-14 h-14 text-center text-2xl font-bold bg-transparent border-none focus:ring-0 placeholder-on-surface-variant/30 transition-colors ${
-                validationStatus === 'success' ? 'text-green-500 cursor-default' :
-                validationStatus === 'error' ? 'text-red-500' :
-                'text-primary'
-              }`}
+              className={`w-14 h-14 text-center text-2xl font-bold bg-transparent border-none focus:ring-0 placeholder-on-surface-variant/30 transition-colors ${validationStatus === 'success' ? 'text-green-500 cursor-default' :
+                  validationStatus === 'error' ? 'text-red-500' :
+                    'text-primary'
+                }`}
             />
             <button
               onClick={() => onValidate(clue)}
