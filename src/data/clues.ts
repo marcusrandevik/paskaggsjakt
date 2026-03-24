@@ -27,7 +27,7 @@ export const CLUES: Clue[] = [
   },
   {
     id: 4,
-    title: "Ängen och bergt",
+    title: "Ängen och berget",
     image: "maps/map4.jpeg",
     alt: "Aerial forest map of Amber Archway",
     correctLetter: "D",
