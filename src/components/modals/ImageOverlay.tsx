@@ -34,7 +34,7 @@ export const ImageOverlay: React.FC<ImageOverlayProps> = ({ clue, onClose }) => 
             className="max-w-full max-h-[80vh] rounded-lg shadow-2xl object-contain"
           />
           <div className="mt-8 text-surface text-center">
-            <h2 className="font-headline text-3xl font-bold mb-2">Map Detail: {clue.title}</h2>
+            <h2 className="font-headline text-3xl font-bold mb-2">{clue.title}</h2>
             <p className="font-label opacity-70 text-lg">{clue.hint}</p>
           </div>
         </motion.div>

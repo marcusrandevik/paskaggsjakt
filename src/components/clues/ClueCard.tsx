@@ -55,18 +55,19 @@ export const ClueCard: React.FC<ClueCardProps> = ({
               placeholder="?"
               value={letter}
               onChange={(e) => onLetterChange(clue.id, e.target.value)}
+              readOnly={validationStatus === 'success'}
               className={`w-14 h-14 text-center text-2xl font-bold bg-transparent border-none focus:ring-0 placeholder-on-surface-variant/30 transition-colors ${
-                validationStatus === 'success' ? 'text-green-500' :
+                validationStatus === 'success' ? 'text-green-500 cursor-default' :
                 validationStatus === 'error' ? 'text-red-500' :
                 'text-primary'
               }`}
             />
             <button
               onClick={() => onValidate(clue)}
-              disabled={!letter}
-              className="px-4 bg-primary/10 hover:bg-primary/20 text-primary transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-medium font-label uppercase tracking-wider text-sm flex items-center justify-center border-l border-surface/20"
+              disabled={!letter || validationStatus === 'success'}
+              className="px-4 bg-primary/10 hover:bg-primary/20 text-primary transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-medium font-label uppercase tracking-wider text-sm flex items-center justify-center border-l border-surface/20 min-w-[120px]"
             >
-              Kontrollera
+              {validationStatus === 'success' ? 'KLAR' : 'Kontrollera'}
             </button>
           </div>
         </div>

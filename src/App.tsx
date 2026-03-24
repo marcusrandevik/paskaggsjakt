@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { Header } from './components/layout/Header';
@@ -10,12 +10,44 @@ import { CLUES, CORRECT_FINAL_WORD } from './data/clues';
 import { Clue } from './types';
 
 export default function App() {
-  const [letters, setLetters] = useState<{ [key: number]: string }>({});
-  const [validationStatuses, setValidationStatuses] = useState<{ [key: number]: 'success' | 'error' | null }>({});
+  const [letters, setLetters] = useState<{ [key: number]: string }>(() => {
+    const saved = localStorage.getItem('paskaggsjakt_letters');
+    return saved ? JSON.parse(saved) : {};
+  });
+  
+  const [validationStatuses, setValidationStatuses] = useState<{ [key: number]: 'success' | 'error' | null }>(() => {
+    const saved = localStorage.getItem('paskaggsjakt_validation');
+    return saved ? JSON.parse(saved) : {};
+  });
+
   const [selectedClue, setSelectedClue] = useState<Clue | null>(null);
   const [isFinalGuessOpen, setIsFinalGuessOpen] = useState(false);
-  const [finalGuess, setFinalGuess] = useState('');
-  const [finalValidationStatus, setFinalValidationStatus] = useState<'success' | 'error' | null>(null);
+  
+  const [finalGuess, setFinalGuess] = useState(() => {
+    return localStorage.getItem('paskaggsjakt_final_guess') || '';
+  });
+
+  const [finalValidationStatus, setFinalValidationStatus] = useState<'success' | 'error' | null>(() => {
+    const saved = localStorage.getItem('paskaggsjakt_final_validation');
+    return saved ? JSON.parse(saved) as 'success' | 'error' | null : null;
+  });
+
+  // Save to localStorage whenever state changes
+  useEffect(() => {
+    localStorage.setItem('paskaggsjakt_letters', JSON.stringify(letters));
+  }, [letters]);
+
+  useEffect(() => {
+    localStorage.setItem('paskaggsjakt_validation', JSON.stringify(validationStatuses));
+  }, [validationStatuses]);
+
+  useEffect(() => {
+    localStorage.setItem('paskaggsjakt_final_guess', finalGuess);
+  }, [finalGuess]);
+
+  useEffect(() => {
+    localStorage.setItem('paskaggsjakt_final_validation', JSON.stringify(finalValidationStatus));
+  }, [finalValidationStatus]);
 
   const handleFinalGuessChange = (value: string) => {
     setFinalGuess(value.toUpperCase());

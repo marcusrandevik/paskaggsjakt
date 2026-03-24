@@ -15,7 +15,7 @@ export const FinalGuessFab: React.FC<FinalGuessFabProps> = ({ onClick }) => {
       className="fixed bottom-8 right-8 z-50 flex items-center gap-3 bg-primary text-on-primary px-8 py-6 rounded-xl shadow-2xl hover:shadow-primary/20 transition-all group"
     >
       <Lightbulb className="w-8 h-8 fill-current" />
-      <span className="font-headline font-bold text-lg tracking-wide uppercase">Final Guess</span>
+      <span className="font-headline font-bold text-lg tracking-wide uppercase">Gissa ordet</span>
     </motion.button>
   );
 };
