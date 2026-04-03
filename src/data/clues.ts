@@ -6,7 +6,7 @@ export const CLUES: Clue[] = [
     title: "Sjörövarnas hamn",
     image: "maps/map1.jpeg",
     alt: "Vintage hand-drawn map of Whispering Pines",
-    correctLetter: "K",
+    correctLetter: "A",
     hint: "En hamn med utsikt över vita sand"
   },
   {
@@ -22,7 +22,7 @@ export const CLUES: Clue[] = [
     title: "Berget vid havet",
     image: "maps/map3.jpeg",
     alt: "Ancient map scroll of Hollow Hill",
-    correctLetter: "A",
+    correctLetter: "K",
     hint: "Utsikten från detta berg är svårslagen"
   },
   {
