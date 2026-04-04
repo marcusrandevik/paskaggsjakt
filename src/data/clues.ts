@@ -3,8 +3,8 @@ import { Clue } from '../types';
 export const CLUES: Clue[] = [
   {
     id: 1,
-    title: "Sjörövarnas hamn",
-    image: "maps/map1.jpeg",
+    title: "Ängen vid skolan",
+    image: "maps/map6.jpg",
     alt: "Vintage hand-drawn map of Whispering Pines",
     correctLetter: "A",
     hint: "En hamn med utsikt över vita sand"
@@ -42,9 +42,9 @@ export const CLUES: Clue[] = [
     hint: "Här finns många stigar för den som är ute och går"
   }, {
     id: 6,
-    title: "Ängen vid skolan",
-    image: "maps/map6.jpg",
-    alt: "Ängen vid skolan",
+    title: "Sjörövarnas hamn",
+    image: "maps/map1.jpeg",
+    alt: "Sjörövarnas hamn",
     correctLetter: "R",
     hint: "En stor yta där många rör sig."
   }, {
